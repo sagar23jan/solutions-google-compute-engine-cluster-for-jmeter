@@ -33,6 +33,7 @@ import sys
 import time
 
 import oauth2client
+import gflags
 
 from gce_api import GceApi
 
@@ -302,7 +303,7 @@ class JMeterExecuter(object):
     # terminal such as ssh.
     class SetNoAuthLocalWebserverAction(argparse.Action):
       def __call__(self, parser, namespace, values, option_string=None):
-        oauth2client.tools.gflags.FLAGS.auth_local_webserver = False
+        gflags.FLAGS.auth_local_webserver = False
 
     self.parser.add_argument(
         '--noauth_local_webserver', nargs=0,
